@@ -12,6 +12,9 @@
     </Page.Resources>
     
     <Grid x:Name="ContentArea">
-        <TextBlock FontSize="20" Text="{x:Bind ViewModel.CurrentDate, Converter={StaticResource GregorianToPersianConverter}, Mode=OneWay}"/>
+        <StackPanel Orientation="Vertical">
+            <TextBlock Text="{x:Bind ViewModel.CurrentDate, Converter={StaticResource GregorianToPersianConverter}, Mode=OneWay}" Style="{StaticResource BodyTextBlockStyle}"/>  
+        </StackPanel>
+        
     </Grid>
 </Page>

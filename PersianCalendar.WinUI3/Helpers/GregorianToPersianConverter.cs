@@ -15,9 +15,9 @@ public class GregorianToPersianConverter : IValueConverter
         
         var gregorianDate = (DateTime)value;
 
-        var persianDate = new System.Globalization.PersianCalendar();
-        
-        return persianDate.GetYear(gregorianDate).ToString();
+        var persianCalendar = new System.Globalization.PersianCalendar();
+        var persianDate = $"{persianCalendar.GetYear(gregorianDate)}/{persianCalendar.GetMonth(gregorianDate)}/{persianCalendar.GetDayOfMonth(gregorianDate)}";
+        return persianDate;
         //if (parameter is string enumString)
         //{
         //    if (!Enum.IsDefined(typeof(ElementTheme), value))
