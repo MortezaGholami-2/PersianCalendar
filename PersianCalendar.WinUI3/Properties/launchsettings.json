@@ -1,0 +1,10 @@
+﻿{
+    "profiles": {
+      "PersianCalendar.WinUI3 (Package)": {
+        "commandName": "MsixPackage"
+      },
+      "PersianCalendar.WinUI3 (Unpackaged)": {
+        "commandName": "Project"
+      }
+    }
+}
