@@ -57,8 +57,12 @@ public class CalendarViewModel : ObservableRecipient
         set => SetProperty(ref myVar, value);
     }
 
-    private bool SixthRowVisibility;
-
+    private bool _SixthRowVisibility;
+    public bool SixthRowVisibility
+    {
+        get => _SixthRowVisibility;
+        set => SetProperty(ref _SixthRowVisibility, value);
+    }
 
     private int myVar2;
     public int MyProperty2
@@ -74,7 +78,7 @@ public class CalendarViewModel : ObservableRecipient
     {
         CurrentDate = DateTime.Now;
         CurrentPersianYear = 1401;
-        CurrentPersianMonth = 9;
+        CurrentPersianMonth = 7;
 
         System.Globalization.PersianCalendar persianCalendar = new();
         DateTime tempDate = new DateTime(CurrentPersianYear, CurrentPersianMonth, 1, persianCalendar);
@@ -84,10 +88,12 @@ public class CalendarViewModel : ObservableRecipient
         if (persianCalendar.GetDaysInMonth(CurrentPersianYear, CurrentPersianMonth) + MyProperty2 + 1 <= 35)
         {
             NumberOfRowsOfCalendar = 5;
+            SixthRowVisibility = false;
         }
         else
         {
             NumberOfRowsOfCalendar = 6;
+            SixthRowVisibility = true;
         }
     }
 
