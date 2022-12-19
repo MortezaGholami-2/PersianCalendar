@@ -6,18 +6,11 @@ public class CalendarViewModel : ObservableRecipient
 {
     #region Properties
 
-    private ObservableCollection<DateTime> _Days;
-
-    public ObservableCollection<DateTime> Days
+    private ObservableCollection<int?> _Days;
+    public ObservableCollection<int?> Days
     {
-        get
-        {
-            return _Days;
-        }
-        set
-        {
-            SetProperty(ref _Days, value);
-        }
+        get => _Days;
+        set => SetProperty(ref _Days, value);
     }
 
 
@@ -41,6 +34,13 @@ public class CalendarViewModel : ObservableRecipient
     {
         get => _CurrentPersianMonth;
         set => SetProperty(ref _CurrentPersianMonth, value);
+    }
+
+    private int _DaysOfMonth;
+    public int DaysOfMonth
+    {
+        get => _DaysOfMonth;
+        set => SetProperty(ref _DaysOfMonth, value);
     }
 
     private int _NumberOfRowsOfCalendar;
@@ -77,11 +77,12 @@ public class CalendarViewModel : ObservableRecipient
     public CalendarViewModel()
     {
         CurrentDate = DateTime.Now;
-        CurrentPersianYear = 1401;
-        CurrentPersianMonth = 7;
+        CurrentPersianYear = 1402;
+        CurrentPersianMonth = 2;
 
         System.Globalization.PersianCalendar persianCalendar = new();
         DateTime tempDate = new DateTime(CurrentPersianYear, CurrentPersianMonth, 1, persianCalendar);
+        DaysOfMonth = persianCalendar.GetDaysInMonth(CurrentPersianYear, CurrentPersianMonth);
         string a = persianCalendar.GetDayOfWeek(tempDate).ToString();
         MyProperty = (PersianDayOfWeek)Enum.Parse(typeof(PersianDayOfWeek), a);
         MyProperty2 = (int)Enum.Parse(typeof(PersianDayOfWeek),MyProperty.ToString());
@@ -95,6 +96,17 @@ public class CalendarViewModel : ObservableRecipient
             NumberOfRowsOfCalendar = 6;
             SixthRowVisibility = true;
         }
+
+        Days = new ObservableCollection<int?>();
+        for (var i = 0; i < 42; i++)
+        {
+            Days.Add(null);
+        }
+        for (var i = MyProperty2; i < DaysOfMonth + MyProperty2; i++)
+        {
+            Days[i] = i - MyProperty2 + 1;
+        }
+
     }
 
     public enum PersianDayOfWeek
