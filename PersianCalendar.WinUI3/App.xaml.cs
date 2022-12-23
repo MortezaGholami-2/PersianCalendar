@@ -76,6 +76,8 @@ public partial class App : Application
             services.AddTransient<DashboardViewModel>();
             services.AddTransient<CalendarPage>();
             services.AddTransient<CalendarViewModel>();
+            services.AddTransient<ShiftPage>();
+            services.AddTransient<ShiftViewModel>();
             services.AddTransient<SettingsViewModel>();
             services.AddTransient<SettingsPage>();
             services.AddTransient<ListDetailsViewModel>();

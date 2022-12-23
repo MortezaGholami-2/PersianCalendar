@@ -16,6 +16,7 @@ public class PageService : IPageService
     {
         Configure<DashboardViewModel, DashboardPage>();
         Configure<CalendarViewModel, CalendarPage>();
+        Configure<ShiftViewModel, ShiftPage>();
         Configure<WebViewViewModel, WebViewPage>();
         Configure<DataGridViewModel, DataGridPage>();
         Configure<ContentGridViewModel, ContentGridPage>();

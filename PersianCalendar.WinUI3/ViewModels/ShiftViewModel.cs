@@ -2,11 +2,31 @@
 using CommunityToolkit.Mvvm.ComponentModel;
 
 namespace PersianCalendar.WinUI3.ViewModels;
-public class CalendarViewModel : ObservableRecipient
+public class ShiftViewModel : ObservableRecipient
 {
     #region Properties
 
+    //private ObservableCollection<ShiftDay> _Shift;
+
+    /*
+     * shiftday: dayTitle, person
+     * 
+     */
+
+
+
+
+
+
+
+
+
+
     private DateTime _CurrentDate;
+    private int _ReferencePersianYear;
+    private int _ReferencePersianMonth;
+    private int _ReferencePersianDay;
+    private int _DateDifference;
     private int _CurrentPersianYear;
     private int _CurrentPersianMonth;
 
@@ -15,11 +35,33 @@ public class CalendarViewModel : ObservableRecipient
         get => _CurrentDate;
         set => SetProperty(ref _CurrentDate, value);
     }
+    public int ReferencePersianYear
+    {
+        get => _ReferencePersianYear;
+        set => SetProperty(ref _ReferencePersianYear, value);
+    }
+    public int ReferencePersianMonth
+    {
+        get => _ReferencePersianMonth;
+        set => SetProperty(ref _ReferencePersianMonth, value);
+    }
+    public int ReferencePersianDay
+    {
+        get => _ReferencePersianDay;
+        set => SetProperty(ref _ReferencePersianDay, value);
+    }
+
+    public int DateDifference
+    {
+        get => _DateDifference;
+        set => SetProperty(ref _DateDifference, value);
+    }
     public int CurrentPersianYear
     {
         get => _CurrentPersianYear;
         set => SetProperty(ref _CurrentPersianYear, value);
     }
+
     public int CurrentPersianMonth
     {
         get => _CurrentPersianMonth;
@@ -78,8 +120,13 @@ public class CalendarViewModel : ObservableRecipient
 
 
     #endregion
-    public CalendarViewModel()
+    public ShiftViewModel()
     {
+        ReferencePersianYear = 1401;
+        ReferencePersianMonth = 9;
+        ReferencePersianDay = 21;
+
+
         CurrentDate = DateTime.Now;
         CurrentPersianYear = 1402;
         CurrentPersianMonth = 2;
@@ -110,6 +157,10 @@ public class CalendarViewModel : ObservableRecipient
         {
             Days[i] = i - MyProperty2 + 1;
         }
+
+        
+        DateDifference = (int)(persianCalendar.ToDateTime(1401, 10, 20, 0, 0, 0, 0) - persianCalendar.ToDateTime(1401, 9, 5, 0, 0, 0, 0)).TotalDays;
+        MyProperty2=DateDifference%8;
 
     }
 

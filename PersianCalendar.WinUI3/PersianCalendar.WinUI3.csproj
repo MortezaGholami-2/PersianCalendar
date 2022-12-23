@@ -15,8 +15,15 @@
     <EnableMsixTooling>true</EnableMsixTooling>
   </PropertyGroup>
   <ItemGroup>
+    <Compile Remove="ViewModels\Design\**" />
+    <EmbeddedResource Remove="ViewModels\Design\**" />
+    <None Remove="ViewModels\Design\**" />
+    <Page Remove="ViewModels\Design\**" />
+  </ItemGroup>
+  <ItemGroup>
     <None Remove="Views\CalendarPage.xaml" />
     <None Remove="Views\DashboardPage.xaml" />
+    <None Remove="Views\ShiftPage.xaml" />
   </ItemGroup>
 
   <ItemGroup>
@@ -28,6 +35,8 @@
     <PackageReference Include="CommunityToolkit.WinUI.UI.Animations" Version="7.1.2" />
     <PackageReference Include="CommunityToolkit.WinUI.UI.Controls" Version="7.1.2" />
     <PackageReference Include="CommunityToolkit.WinUI.UI.Controls.DataGrid" Version="7.1.2" />
+    <PackageReference Include="Microsoft.EntityFrameworkCore" Version="7.0.1" />
+    <PackageReference Include="Microsoft.EntityFrameworkCore.Sqlite" Version="7.0.1" />
     <PackageReference Include="Microsoft.Extensions.Hosting" Version="6.0.1" />
     <PackageReference Include="Microsoft.WindowsAppSDK" Version="1.1.3" />
     <PackageReference Include="Microsoft.Xaml.Behaviors.WinUI.Managed" Version="2.0.8" />
@@ -41,6 +50,9 @@
     <None Update="appsettings.json">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </None>
+    <Page Update="Views\ShiftPage.xaml">
+      <XamlRuntime>$(DefaultXamlRuntime)</XamlRuntime>
+    </Page>
     <Page Update="Views\CalendarPage.xaml">
       <Generator>MSBuild:Compile</Generator>
     </Page>
@@ -52,12 +64,12 @@
   <ItemGroup Condition="'$(DisableMsixProjectCapabilityAddedByProject)'!='true' and '$(EnableMsixTooling)'=='true'">
     <ProjectCapability Include="Msix" />
   </ItemGroup>
-
-  <ItemGroup>
-    <Folder Include="ViewModels\Design\" />
-  </ItemGroup>
   
   <PropertyGroup Condition="'$(DisableHasPackageAndPublishMenuAddedByProject)'!='true' and '$(EnableMsixTooling)'=='true'">
     <HasPackageAndPublishMenu>true</HasPackageAndPublishMenu>
   </PropertyGroup>
+  
+  <ItemGroup>
+    <PRIResource Remove="ViewModels\Design\**" />
+  </ItemGroup>
 </Project>

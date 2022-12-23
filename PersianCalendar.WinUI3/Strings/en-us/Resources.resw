@@ -215,4 +215,7 @@
   <data name="Shell_Dashboard.Content" xml:space="preserve">
     <value>Dashboard</value>
   </data>
+  <data name="Shell_Shift.Content" xml:space="preserve">
+    <value>Shift Work</value>
+  </data>
 </root>

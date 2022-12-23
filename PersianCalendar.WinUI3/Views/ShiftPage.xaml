@@ -1,0 +1,48 @@
+﻿<Page
+    x:Class="PersianCalendar.WinUI3.Views.ShiftPage"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    mc:Ignorable="d"
+    xmlns:helpers="using:PersianCalendar.WinUI3.Helpers">
+
+    <Page.Resources>
+        <helpers:GregorianToPersianConverter x:Key="GregorianToPersianConverter"/>
+        <helpers:BooleanToVisibilityConverter x:Key="BooleanToVisibilityConverter"/>
+    </Page.Resources>
+    
+    <Grid x:Name="ContentArea">
+        <StackPanel Orientation="Vertical">
+            <TextBlock Text="روزکار" Style="{StaticResource BodyTextBlockStyle}"/>
+            <TextBlock Text="روزکار" Style="{StaticResource BodyTextBlockStyle}"/>
+            <TextBlock Text="شبکار" Style="{StaticResource BodyTextBlockStyle}"/>
+            <TextBlock Text="شبکار" Style="{StaticResource BodyTextBlockStyle}"/>
+            <TextBlock Text="استراحت" Style="{StaticResource BodyTextBlockStyle}"/>
+            <TextBlock Text="استراحت" Style="{StaticResource BodyTextBlockStyle}"/>
+            <TextBlock Text="استراحت" Style="{StaticResource BodyTextBlockStyle}"/>
+            <TextBlock Text="استراحت" Style="{StaticResource BodyTextBlockStyle}"/>
+
+            <TextBlock Text="{x:Bind ViewModel.ReferencePersianYear}" Style="{StaticResource BodyTextBlockStyle}"/>
+            <TextBlock Text="{x:Bind ViewModel.ReferencePersianMonth}" Style="{StaticResource BodyTextBlockStyle}"/>
+            <TextBlock Text="{x:Bind ViewModel.ReferencePersianDay}" Style="{StaticResource BodyTextBlockStyle}"/>
+            <TextBlock Text="استراحت دوم" Style="{StaticResource BodyTextBlockStyle}"/>
+
+            <TextBox Text="1401"/>
+            <TextBox Text="9"/>
+            <TextBox Text="21"/>
+
+            <TextBlock Text="{x:Bind ViewModel.DateDifference}" Style="{StaticResource BodyTextBlockStyle}"/>
+            <TextBlock Text="{x:Bind ViewModel.MyProperty2}" Style="{StaticResource BodyTextBlockStyle}"/>
+            <TextBlock Text="" Style="{StaticResource BodyTextBlockStyle}"/>
+            <TextBlock Text="" Style="{StaticResource BodyTextBlockStyle}"/>
+
+            <TextBlock Text="{x:Bind ViewModel.CurrentDate, Converter={StaticResource GregorianToPersianConverter}, Mode=OneWay}" Style="{StaticResource BodyTextBlockStyle}"/>
+            <TextBlock Text="{x:Bind ViewModel.MyProperty}" Style="{StaticResource BodyTextBlockStyle}"/>
+            <TextBlock Text="{x:Bind ViewModel.MyProperty2}" Style="{StaticResource BodyTextBlockStyle}"/>
+            <TextBlock Text="{x:Bind ViewModel.NumberOfRowsOfCalendar}" Style="{StaticResource BodyTextBlockStyle}"/>
+            
+        </StackPanel>
+
+    </Grid>
+</Page>
