@@ -1,15 +1,11 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using Microsoft.EntityFrameworkCore;
-//using Microsoft.EntityFrameworkCore.Metadata;
+﻿using Microsoft.EntityFrameworkCore;
 using PersianCalendar.WinUI3.Database.Models;
 
-namespace PersianCalendar.WinUI3.Database.Context;
-public partial class PersianCalendarContext : DbContext
+namespace PersianCalendar.WinUI3.Core.Database;
+public partial class PersianCalendarDatabaseContext : DbContext
 {
+    private const string connectionString = "Server=(localdb)\\mssqllocaldb;Database=EFCore;Trusted_Connection=True;";
+
     public virtual DbSet<Shift> Shifts
     {
         get; set;
@@ -20,7 +16,7 @@ public partial class PersianCalendarContext : DbContext
         get; set;
     }
 
-    public PersianCalendarContext(string databasePath)
+    public PersianCalendarDatabaseContext(string databasePath)
     {
         DatabasePath = databasePath;
     }
@@ -36,7 +32,9 @@ public partial class PersianCalendarContext : DbContext
     {
         if (options.IsConfigured)
         {
-            options.UseSqlite($"Data Source={DatabasePath}");
+            //options.UseSqlite($"Data Source={DatabasePath}");
+            options.UseSqlite("Data Source=CustomerDB.db;");
+            //options.UseSqlite(connectionString);
         }
     }
 
