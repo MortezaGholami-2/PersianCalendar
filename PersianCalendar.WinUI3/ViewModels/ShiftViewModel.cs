@@ -1,5 +1,6 @@
 ﻿using System.Collections.ObjectModel;
 using CommunityToolkit.Mvvm.ComponentModel;
+using PersianCalendar.WinUI3.Database.Models;
 
 namespace PersianCalendar.WinUI3.ViewModels;
 public class ShiftViewModel : ObservableRecipient
@@ -117,6 +118,15 @@ public class ShiftViewModel : ObservableRecipient
         set => SetProperty(ref myVar2, value);
     }
 
+    private string _MyProperty3;
+
+    public string MyProperty3
+    {
+        get => _MyProperty3;
+        set => SetProperty(ref _MyProperty3, value);
+    }
+
+
 
 
     #endregion
@@ -161,6 +171,11 @@ public class ShiftViewModel : ObservableRecipient
         
         DateDifference = (int)(persianCalendar.ToDateTime(1401, 10, 20, 0, 0, 0, 0) - persianCalendar.ToDateTime(1401, 9, 5, 0, 0, 0, 0)).TotalDays;
         MyProperty2=DateDifference%8;
+
+
+
+        var db = new BloggingContext();
+        MyProperty3 = db.DbPath;
 
     }
 

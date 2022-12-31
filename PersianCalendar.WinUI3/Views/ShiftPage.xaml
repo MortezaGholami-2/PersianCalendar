@@ -41,7 +41,8 @@
             <TextBlock Text="{x:Bind ViewModel.MyProperty}" Style="{StaticResource BodyTextBlockStyle}"/>
             <TextBlock Text="{x:Bind ViewModel.MyProperty2}" Style="{StaticResource BodyTextBlockStyle}"/>
             <TextBlock Text="{x:Bind ViewModel.NumberOfRowsOfCalendar}" Style="{StaticResource BodyTextBlockStyle}"/>
-            
+
+            <TextBlock Text="{x:Bind ViewModel.MyProperty3}" Style="{StaticResource BodyTextBlockStyle}"/>
         </StackPanel>
 
     </Grid>
