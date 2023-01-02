@@ -15,5 +15,5 @@ Create DbContext
 
 Create the Database
 ----------------------
-1. In "Package Manager Console" run "Add-Migration "PersianCalendarDatabase".
+1. In "Package Manager Console" run "Add-Migration PersianCalendarDatabase -OutputDir Database\Migrations".
 2. In "Package Manager Console" run "Update-Database".
