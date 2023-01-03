@@ -42,7 +42,12 @@
             <TextBlock Text="{x:Bind ViewModel.MyProperty2}" Style="{StaticResource BodyTextBlockStyle}"/>
             <TextBlock Text="{x:Bind ViewModel.NumberOfRowsOfCalendar}" Style="{StaticResource BodyTextBlockStyle}"/>
 
-            <TextBlock Text="{x:Bind ViewModel.MyProperty3}" Style="{StaticResource BodyTextBlockStyle}"/>
+            <TextBlock Name="MyProperty3TextBlock" Text="{x:Bind ViewModel.MyProperty3}" Style="{StaticResource BodyTextBlockStyle}"/>
+            
+            <StackPanel Orientation="Horizontal">
+                <Button Name="AddShiftButton" Content="Add a Shift" Click="AddShiftButton_Click"/>
+                <Button Name="QueryShiftsButton" Content="Query Shifts" Click="QueryShiftsButton_Click"/>
+            </StackPanel>
         </StackPanel>
 
     </Grid>

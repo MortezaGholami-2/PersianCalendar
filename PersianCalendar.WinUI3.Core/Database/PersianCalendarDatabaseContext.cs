@@ -1,15 +1,12 @@
-﻿//using Microsoft.EntityFrameworkCore;
-//using PersianCalendar.WinUI3.Database.Models;
+﻿using Microsoft.EntityFrameworkCore;
+using PersianCalendar.WinUI3.Database.Models;
 
-//namespace PersianCalendar.WinUI3.Core.Database;
-//public partial class PersianCalendarDatabaseContext : DbContext
-//{
+namespace PersianCalendar.WinUI3.Core.Database;
+public partial class PersianCalendarDatabaseContext : DbContext
+{
 //    private const string connectionString = "Server=(localdb)\\mssqllocaldb;Database=EFCore;Trusted_Connection=True;";
 
-//    public virtual DbSet<Shift> Shifts
-//    {
-//        get; set;
-//    }
+    public DbSet<Shift> Shifts { get; set; }
 
 //    public string DatabasePath
 //    {
@@ -74,4 +71,4 @@
 //    //}
 //    //partial void OnModelCreatingPartial(ModelBuilder modelBuilder);
 
-//}
+}

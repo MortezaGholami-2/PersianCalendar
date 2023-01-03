@@ -1,7 +1,7 @@
-﻿Install Dependencies
+Install Dependencies
 ----------------------
 1. Install "Microsoft.EntityFrameworkCore.Sqlite". It will also install "Microsoft.EntityFrameworkCore".
-2. Install "Microsoft.EntityFrameworkCore.Tools".
+2. Install "Microsoft.EntityFrameworkCore.Tools". It will also install "Microsoft.EntityFramework.Design"
 
 Create Models
 ----------------------
