@@ -38,12 +38,16 @@ public sealed partial class ShiftPage : Page
 
     private void QueryShiftsButton_Click(object sender, Microsoft.UI.Xaml.RoutedEventArgs e)
     {
-        List<Shift> shifts = new List<Shift>();
-        shifts = QueryShifts();
+        //List<Shift> shifts = new List<Shift>();
+        //shifts = QueryShifts();
 
-        foreach (var item in shifts)
+        //foreach (var item in shifts)
+        //{
+        //    MyProperty3TextBlock.Text += item.Name;
+        //}
+        using (var context = new PersianCalendarDatabaseContext())
         {
-            MyProperty3TextBlock.Text += item.Name;
+            MyProperty3TextBlock.Text=context.
         }
     }
 
