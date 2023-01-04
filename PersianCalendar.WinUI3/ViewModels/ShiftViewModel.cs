@@ -174,8 +174,8 @@ public class ShiftViewModel : ObservableRecipient
 
 
 
-        var db = new BloggingContext();
-        MyProperty3 = db.DbPath;
+        //var db = new BloggingContext();
+        //MyProperty3 = db.DbPath;
 
 
 

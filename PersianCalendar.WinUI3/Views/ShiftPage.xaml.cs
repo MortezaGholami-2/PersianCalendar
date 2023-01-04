@@ -1,6 +1,8 @@
-﻿using Microsoft.UI.Xaml.Controls;
-using PersianCalendar.WinUI3.Core.Database;
+﻿using Microsoft.UI.Xaml;
+using Microsoft.UI.Xaml.Controls;
+using PersianCalendar.WinUI3.Database;
 using PersianCalendar.WinUI3.Database.Models;
+using PersianCalendar.WinUI3.Database.Services;
 using PersianCalendar.WinUI3.ViewModels;
 using Windows.UI.Popups;
 
@@ -24,10 +26,11 @@ public sealed partial class ShiftPage : Page
         Shift shift = new() { Name = "mmmm" };
         try
         {
-            using (var context = new PersianCalendarDatabaseContext())
+            using (var context = new DatabaseContext())
             {
                 context.Shifts.Add(shift);
                 context.SaveChanges();
+                _ = new MessageDialog($"Added.");
             }
         }
         catch (Exception ex)
@@ -38,37 +41,23 @@ public sealed partial class ShiftPage : Page
 
     private void QueryShiftsButton_Click(object sender, Microsoft.UI.Xaml.RoutedEventArgs e)
     {
-        //List<Shift> shifts = new List<Shift>();
-        //shifts = QueryShifts();
+        List<Shift> shifts = new List<Shift>();
+        shifts = QueryShifts().ToList();
 
-        //foreach (var item in shifts)
-        //{
-        //    MyProperty3TextBlock.Text += item.Name;
-        //}
-        using (var context = new PersianCalendarDatabaseContext())
+        foreach (var item in shifts)
         {
-            MyProperty3TextBlock.Text=context.
+            MyProperty3TextBlock.Text += item.Name;
         }
+        //string a = Environment.GetFolderPath(Environment.SpecialFolder.Desktop);
+        //using (var context = new PersianCalendarDatabaseContext(a))
+        //{
+        //    MyProperty3TextBlock.Text = context.DatabasePath;
+        //}
     }
 
-    private static List<Shift> QueryShifts()
+    private static IEnumerable<Shift> QueryShifts()
     {
-        try
-        {
-            using (var context = new PersianCalendarDatabaseContext())
-            {
-                var shifts = context.Shifts.ToList();
-                if (shifts != null)
-                {
-                    return shifts;
-                }
-                return default;
-            }
-        }
-        catch (Exception ex)
-        {
-            _ = new MessageDialog($"exception: {ex}");
-            return default;
-        }
+        SqliteDataService a=new SqliteDataService();
+        return a.GetShiftsAsync().Result;
     }
 }
