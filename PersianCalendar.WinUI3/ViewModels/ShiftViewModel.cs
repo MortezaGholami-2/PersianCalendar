@@ -1,5 +1,6 @@
 ﻿using System.Collections.ObjectModel;
 using CommunityToolkit.Mvvm.ComponentModel;
+using PersianCalendar.WinUI3.Database;
 using PersianCalendar.WinUI3.Database.Models;
 
 namespace PersianCalendar.WinUI3.ViewModels;
@@ -130,8 +131,13 @@ public class ShiftViewModel : ObservableRecipient
 
 
     #endregion
-    public ShiftViewModel()
+
+    private readonly DatabaseContext _databaseContext;
+
+    public ShiftViewModel(DatabaseContext databaseContext)
     {
+        _databaseContext = databaseContext;
+
         ReferencePersianYear = 1401;
         ReferencePersianMonth = 9;
         ReferencePersianDay = 21;
@@ -175,7 +181,7 @@ public class ShiftViewModel : ObservableRecipient
 
 
         //var db = new BloggingContext();
-        //MyProperty3 = db.DbPath;
+        MyProperty3 = _databaseContext.Shifts.Count().ToString();
 
 
 

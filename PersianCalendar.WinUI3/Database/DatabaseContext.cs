@@ -4,12 +4,8 @@ using PersianCalendar.WinUI3.Database.Models;
 namespace PersianCalendar.WinUI3.Database;
 public class DatabaseContext : DbContext
 {
-
-    public string DatabasePath
-    {
-        get; set;
-    }
-    private const string connectionString = "Server=(localdb)\\mssqllocaldb;Database=EFCore;Trusted_Connection=True;";
+    public string? DatabasePath { get; set; }
+    //private const string connectionString = "Server=(localdb)\\mssqllocaldb;Database=EFCore;Trusted_Connection=True;";
     public DbSet<Shift> Shifts
     {
         get; set;
@@ -24,10 +20,10 @@ public class DatabaseContext : DbContext
         DatabasePath = Path.Join(path, "shiftblogging.db");
     }
 
-    //public PersianCalendarDatabaseContext(DbContextOptions<PersianCalendarDatabaseContext> optionsBuilder)
-    //        : base(optionsBuilder)
-    //{
-    //}
+    public DatabaseContext(DbContextOptions<DatabaseContext> options)
+        : base(options)
+    {   
+    }
 
     // The following configures EF to create a Sqlite database file in the
     // special "local" folder for your platform.
