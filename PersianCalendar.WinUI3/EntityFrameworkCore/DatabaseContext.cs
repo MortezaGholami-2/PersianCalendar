@@ -1,5 +1,5 @@
 ﻿using Microsoft.EntityFrameworkCore;
-using PersianCalendar.WinUI3.Database.Models;
+using PersianCalendar.WinUI3.Core.Models;
 
 namespace PersianCalendar.WinUI3.Database;
 public class DatabaseContext : DbContext

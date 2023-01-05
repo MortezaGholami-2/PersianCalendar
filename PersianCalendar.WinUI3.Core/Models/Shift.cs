@@ -1,4 +1,4 @@
-﻿namespace PersianCalendar.WinUI3.Database.Models;
+﻿namespace PersianCalendar.WinUI3.Core.Models;
 public class Shift
 {
     public int Id
