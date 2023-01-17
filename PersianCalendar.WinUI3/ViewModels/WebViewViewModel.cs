@@ -82,24 +82,24 @@ public class WebViewViewModel : ObservableRecipient, INavigationAware
 
     public void OnNavigatedTo(object parameter)
     {
-        WebViewService.NavigationCompleted += OnNavigationCompleted;
+        //WebViewService.NavigationCompleted += OnNavigationCompleted;
     }
 
     public void OnNavigatedFrom()
     {
         WebViewService.UnregisterEvents();
-        WebViewService.NavigationCompleted -= OnNavigationCompleted;
+        //WebViewService.NavigationCompleted -= OnNavigationCompleted;
     }
 
-    private void OnNavigationCompleted(object? sender, CoreWebView2WebErrorStatus webErrorStatus)
+    private void OnNavigationCompleted(object? sender/*, CoreWebView2WebErrorStatus webErrorStatus*/)
     {
         IsLoading = false;
         OnPropertyChanged(nameof(BrowserBackCommand));
         OnPropertyChanged(nameof(BrowserForwardCommand));
-        if (webErrorStatus != default)
-        {
-            HasFailures = true;
-        }
+        //if (webErrorStatus != default)
+        //{
+        //    HasFailures = true;
+        //}
     }
 
     private void OnRetry()

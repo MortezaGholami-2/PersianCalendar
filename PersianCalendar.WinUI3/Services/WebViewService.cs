@@ -19,7 +19,7 @@ public class WebViewService : IWebViewService
     [MemberNotNullWhen(true, nameof(_webView))]
     public bool CanGoForward => _webView != null && _webView.CanGoForward;
 
-    public event EventHandler<CoreWebView2WebErrorStatus>? NavigationCompleted;
+    //public event EventHandler<CoreWebView2WebErrorStatus>? NavigationCompleted;
 
     public WebViewService()
     {
@@ -29,7 +29,7 @@ public class WebViewService : IWebViewService
     public void Initialize(WebView2 webView)
     {
         _webView = webView;
-        _webView.NavigationCompleted += OnWebViewNavigationCompleted;
+        //_webView.NavigationCompleted += OnWebViewNavigationCompleted;
     }
 
     public void GoBack() => _webView?.GoBack();
@@ -42,9 +42,9 @@ public class WebViewService : IWebViewService
     {
         if (_webView != null)
         {
-            _webView.NavigationCompleted -= OnWebViewNavigationCompleted;
+            //_webView.NavigationCompleted -= OnWebViewNavigationCompleted;
         }
     }
 
-    private void OnWebViewNavigationCompleted(WebView2 sender, CoreWebView2NavigationCompletedEventArgs args) => NavigationCompleted?.Invoke(this, args.WebErrorStatus);
+    //private void OnWebViewNavigationCompleted(WebView2 sender, CoreWebView2NavigationCompletedEventArgs args) => NavigationCompleted?.Invoke(this, args.WebErrorStatus);
 }

@@ -1,8 +1,6 @@
 ﻿using Microsoft.UI.Xaml;
 using Microsoft.UI.Xaml.Controls;
-using PersianCalendar.WinUI3.Database;
-using PersianCalendar.WinUI3.Database.Models;
-using PersianCalendar.WinUI3.Database.Services;
+using PersianCalendar.WinUI3.Core.Models;
 using PersianCalendar.WinUI3.ViewModels;
 using Windows.UI.Popups;
 
@@ -26,12 +24,12 @@ public sealed partial class ShiftPage : Page
         Shift shift = new() { Name = "mmmm" };
         try
         {
-            using (var context = new DatabaseContext())
-            {
-                context.Shifts.Add(shift);
-                context.SaveChanges();
-                _ = new MessageDialog($"Added.");
-            }
+            //using (var context = new DatabaseContext())
+            //{
+            //    context.Shifts.Add(shift);
+            //    context.SaveChanges();
+            //    _ = new MessageDialog($"Added.");
+            //}
         }
         catch (Exception ex)
         {
@@ -57,7 +55,8 @@ public sealed partial class ShiftPage : Page
 
     private static IEnumerable<Shift> QueryShifts()
     {
-        SqliteDataService a=new SqliteDataService();
-        return a.GetShiftsAsync().Result;
+        //SqliteDataService a=new SqliteDataService();
+        //return a.GetShiftsAsync().Result;
+        return default;
     }
 }

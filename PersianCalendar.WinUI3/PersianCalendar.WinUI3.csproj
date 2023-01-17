@@ -52,6 +52,7 @@
   </ItemGroup>
 
   <ItemGroup>
+    <ProjectReference Include="..\PersianCalendar.EntityFramework\PersianCalendar.EntityFramework.csproj" />
     <ProjectReference Include="..\PersianCalendar.WinUI3.Core\PersianCalendar.WinUI3.Core.csproj" />
   </ItemGroup>
   <ItemGroup>

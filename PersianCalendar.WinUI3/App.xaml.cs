@@ -8,7 +8,6 @@ using PersianCalendar.WinUI3.Activation;
 using PersianCalendar.WinUI3.Contracts.Services;
 using PersianCalendar.WinUI3.Core.Contracts.Services;
 using PersianCalendar.WinUI3.Core.Services;
-using PersianCalendar.WinUI3.Database;
 using PersianCalendar.WinUI3.Helpers;
 using PersianCalendar.WinUI3.Models;
 using PersianCalendar.WinUI3.Notifications;
@@ -71,7 +70,7 @@ public partial class App : Application
             services.AddSingleton<INavigationService, NavigationService>();
 
             //services.AddDbContext<DatabaseContext>(options => options.UseSqlite(context.Configuration.GetSection("ConnectionStrings").GetConnectionString("SqliteDatabaseConnectionString")));
-            services.AddDbContext<DatabaseContext>(options => options.UseSqlite(context.Configuration.GetConnectionString("SqliteDatabaseConnectionString2")));
+            //services.AddDbContext<DatabaseContext>(options => options.UseSqlite(context.Configuration.GetConnectionString("SqliteDatabaseConnectionString2")));
 
             // Core Services
             services.AddSingleton<ISampleDataService, SampleDataService>();

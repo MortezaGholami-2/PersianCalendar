@@ -1,10 +1,6 @@
 ﻿namespace PersianCalendar.WinUI3.Core.Models;
-public class Shift
+public class Shift : BaseModel
 {
-    public int Id
-    {
-        get; set;
-    }
     public string Name
     {
         get; set;
