@@ -1,6 +1,6 @@
 ﻿using Microsoft.UI.Xaml;
 using Microsoft.UI.Xaml.Controls;
-using PersianCalendar.WinUI3.Core.Models;
+using PersianCalendar.Core.Models;
 using PersianCalendar.WinUI3.ViewModels;
 using Windows.UI.Popups;
 

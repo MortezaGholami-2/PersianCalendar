@@ -4,7 +4,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace PersianCalendar.WinUI3.Core.Services;
+namespace PersianCalendar.Core.Services;
 public interface IDataService<T>
 {
     Task<IEnumerable<T>> GetAll();

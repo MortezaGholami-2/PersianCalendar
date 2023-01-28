@@ -53,7 +53,7 @@
 
   <ItemGroup>
     <ProjectReference Include="..\PersianCalendar.EntityFramework\PersianCalendar.EntityFramework.csproj" />
-    <ProjectReference Include="..\PersianCalendar.WinUI3.Core\PersianCalendar.WinUI3.Core.csproj" />
+    <ProjectReference Include="..\PersianCalendar.WinUI3.Core\PersianCalendar.Core.csproj" />
   </ItemGroup>
   <ItemGroup>
     <None Update="appsettings.json">

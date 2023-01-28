@@ -6,8 +6,8 @@ using Microsoft.UI.Xaml;
 
 using PersianCalendar.WinUI3.Activation;
 using PersianCalendar.WinUI3.Contracts.Services;
-using PersianCalendar.WinUI3.Core.Contracts.Services;
-using PersianCalendar.WinUI3.Core.Services;
+using PersianCalendar.Core.Contracts.Services;
+using PersianCalendar.Core.Services;
 using PersianCalendar.WinUI3.Helpers;
 using PersianCalendar.WinUI3.Models;
 using PersianCalendar.WinUI3.Notifications;

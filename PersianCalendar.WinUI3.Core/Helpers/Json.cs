@@ -1,6 +1,6 @@
 ﻿using Newtonsoft.Json;
 
-namespace PersianCalendar.WinUI3.Core.Helpers;
+namespace PersianCalendar.Core.Helpers;
 
 public static class Json
 {

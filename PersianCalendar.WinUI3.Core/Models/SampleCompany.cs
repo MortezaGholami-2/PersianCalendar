@@ -1,4 +1,4 @@
-﻿namespace PersianCalendar.WinUI3.Core.Models;
+﻿namespace PersianCalendar.Core.Models;
 
 // Model for the SampleDataService. Replace with your own model.
 public class SampleCompany

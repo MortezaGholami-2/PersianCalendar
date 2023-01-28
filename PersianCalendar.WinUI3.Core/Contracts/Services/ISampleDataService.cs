@@ -1,6 +1,6 @@
-﻿using PersianCalendar.WinUI3.Core.Models;
+﻿using PersianCalendar.Core.Models;
 
-namespace PersianCalendar.WinUI3.Core.Contracts.Services;
+namespace PersianCalendar.Core.Contracts.Services;
 
 // Remove this class once your pages/features are using your data.
 public interface ISampleDataService

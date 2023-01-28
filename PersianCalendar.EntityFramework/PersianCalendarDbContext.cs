@@ -4,7 +4,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using Microsoft.EntityFrameworkCore;
-using PersianCalendar.WinUI3.Core.Models;
+using PersianCalendar.Core.Models;
 
 namespace PersianCalendar.EntityFramework;
 

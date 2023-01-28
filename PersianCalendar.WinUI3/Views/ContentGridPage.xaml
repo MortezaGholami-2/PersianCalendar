@@ -6,7 +6,7 @@
     xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
     xmlns:animations="using:CommunityToolkit.WinUI.UI.Animations"
     xmlns:controls="using:CommunityToolkit.WinUI.UI.Controls"
-    xmlns:models="using:PersianCalendar.WinUI3.Core.Models"
+    xmlns:models="using:PersianCalendar.Core.Models"
     mc:Ignorable="d">
 
     <Grid x:Name="ContentArea">

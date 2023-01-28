@@ -6,8 +6,8 @@ using CommunityToolkit.Mvvm.Input;
 
 using PersianCalendar.WinUI3.Contracts.Services;
 using PersianCalendar.WinUI3.Contracts.ViewModels;
-using PersianCalendar.WinUI3.Core.Contracts.Services;
-using PersianCalendar.WinUI3.Core.Models;
+using PersianCalendar.Core.Contracts.Services;
+using PersianCalendar.Core.Models;
 
 namespace PersianCalendar.WinUI3.ViewModels;
 

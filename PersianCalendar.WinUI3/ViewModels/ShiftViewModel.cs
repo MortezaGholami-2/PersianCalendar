@@ -1,6 +1,6 @@
 ﻿using System.Collections.ObjectModel;
 using CommunityToolkit.Mvvm.ComponentModel;
-using PersianCalendar.WinUI3.Core.Models;
+using PersianCalendar.Core.Models;
 
 namespace PersianCalendar.WinUI3.ViewModels;
 public class ShiftViewModel : ObservableRecipient

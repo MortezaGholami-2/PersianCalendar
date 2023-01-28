@@ -1,4 +1,4 @@
-﻿namespace PersianCalendar.WinUI3.Core.Contracts.Services;
+﻿namespace PersianCalendar.Core.Contracts.Services;
 
 public interface IFileService
 {

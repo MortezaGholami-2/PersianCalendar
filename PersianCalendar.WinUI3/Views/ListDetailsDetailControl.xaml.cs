@@ -1,7 +1,7 @@
 ﻿using Microsoft.UI.Xaml;
 using Microsoft.UI.Xaml.Controls;
 
-using PersianCalendar.WinUI3.Core.Models;
+using PersianCalendar.Core.Models;
 
 namespace PersianCalendar.WinUI3.Views;
 

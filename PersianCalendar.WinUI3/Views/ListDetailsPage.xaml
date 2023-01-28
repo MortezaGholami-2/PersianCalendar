@@ -5,7 +5,7 @@
     xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
     xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
     xmlns:controls="using:CommunityToolkit.WinUI.UI.Controls"
-    xmlns:models="using:PersianCalendar.WinUI3.Core.Models"
+    xmlns:models="using:PersianCalendar.Core.Models"
     xmlns:views="using:PersianCalendar.WinUI3.Views"
     xmlns:behaviors="using:PersianCalendar.WinUI3.Behaviors"
     behaviors:NavigationViewHeaderBehavior.HeaderMode="Never"

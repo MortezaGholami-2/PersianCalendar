@@ -2,9 +2,9 @@
 
 using Newtonsoft.Json;
 
-using PersianCalendar.WinUI3.Core.Contracts.Services;
+using PersianCalendar.Core.Contracts.Services;
 
-namespace PersianCalendar.WinUI3.Core.Services;
+namespace PersianCalendar.Core.Services;
 
 public class FileService : IFileService
 {

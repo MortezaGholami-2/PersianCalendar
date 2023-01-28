@@ -4,7 +4,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace PersianCalendar.WinUI3.Core.Models;
+namespace PersianCalendar.Core.Models;
 public class BaseModel
 {
     public int Id { get; set; }

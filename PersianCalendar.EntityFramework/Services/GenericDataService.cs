@@ -5,8 +5,8 @@ using System.Text;
 using System.Threading.Tasks;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.ChangeTracking;
-using PersianCalendar.WinUI3.Core.Models;
-using PersianCalendar.WinUI3.Core.Services;
+using PersianCalendar.Core.Models;
+using PersianCalendar.Core.Services;
 
 namespace PersianCalendar.EntityFramework.Services;
 public class GenericDataService<T> : IDataService<T> where T : BaseModel

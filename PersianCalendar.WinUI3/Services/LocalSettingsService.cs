@@ -1,8 +1,8 @@
 ﻿using Microsoft.Extensions.Options;
 
 using PersianCalendar.WinUI3.Contracts.Services;
-using PersianCalendar.WinUI3.Core.Contracts.Services;
-using PersianCalendar.WinUI3.Core.Helpers;
+using PersianCalendar.Core.Contracts.Services;
+using PersianCalendar.Core.Helpers;
 using PersianCalendar.WinUI3.Helpers;
 using PersianCalendar.WinUI3.Models;
 

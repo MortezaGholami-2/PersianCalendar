@@ -16,7 +16,7 @@
   </ItemGroup>
 
   <ItemGroup>
-    <ProjectReference Include="..\PersianCalendar.WinUI3.Core\PersianCalendar.WinUI3.Core.csproj" />
+    <ProjectReference Include="..\PersianCalendar.WinUI3.Core\PersianCalendar.Core.csproj" />
   </ItemGroup>
 
 </Project>

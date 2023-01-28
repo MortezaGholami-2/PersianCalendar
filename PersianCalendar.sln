@@ -5,7 +5,7 @@ VisualStudioVersion = 17.3.32901.215
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "PersianCalendar.WinUI3", "PersianCalendar.WinUI3\PersianCalendar.WinUI3.csproj", "{80F08041-3A18-4619-B1A0-592C1F7E5F52}"
 EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "PersianCalendar.WinUI3.Core", "PersianCalendar.WinUI3.Core\PersianCalendar.WinUI3.Core.csproj", "{323B45B8-234A-4297-BA62-624A18171BFA}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "PersianCalendar.Core", "PersianCalendar.WinUI3.Core\PersianCalendar.Core.csproj", "{323B45B8-234A-4297-BA62-624A18171BFA}"
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Solution Items", "Solution Items", "{227C4B0B-CEC0-4CCC-AAFB-84D340F306FC}"
 	ProjectSection(SolutionItems) = preProject
@@ -13,7 +13,9 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Solution Items", "Solution 
 		Research.txt = Research.txt
 	EndProjectSection
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "PersianCalendar.EntityFramework", "PersianCalendar.EntityFramework\PersianCalendar.EntityFramework.csproj", "{9EA1CA31-0DE7-4E9D-AF49-DCF5F205C3E8}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "PersianCalendar.EntityFramework", "PersianCalendar.EntityFramework\PersianCalendar.EntityFramework.csproj", "{9EA1CA31-0DE7-4E9D-AF49-DCF5F205C3E8}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "PersianCalendar.Wpf", "PersianCalendar.Wpf\PersianCalendar.Wpf.csproj", "{4732105B-2AA4-44B1-A8A4-249DF845DAE7}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -83,6 +85,22 @@ Global
 		{9EA1CA31-0DE7-4E9D-AF49-DCF5F205C3E8}.Release|x64.Build.0 = Release|Any CPU
 		{9EA1CA31-0DE7-4E9D-AF49-DCF5F205C3E8}.Release|x86.ActiveCfg = Release|Any CPU
 		{9EA1CA31-0DE7-4E9D-AF49-DCF5F205C3E8}.Release|x86.Build.0 = Release|Any CPU
+		{4732105B-2AA4-44B1-A8A4-249DF845DAE7}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{4732105B-2AA4-44B1-A8A4-249DF845DAE7}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{4732105B-2AA4-44B1-A8A4-249DF845DAE7}.Debug|arm64.ActiveCfg = Debug|Any CPU
+		{4732105B-2AA4-44B1-A8A4-249DF845DAE7}.Debug|arm64.Build.0 = Debug|Any CPU
+		{4732105B-2AA4-44B1-A8A4-249DF845DAE7}.Debug|x64.ActiveCfg = Debug|Any CPU
+		{4732105B-2AA4-44B1-A8A4-249DF845DAE7}.Debug|x64.Build.0 = Debug|Any CPU
+		{4732105B-2AA4-44B1-A8A4-249DF845DAE7}.Debug|x86.ActiveCfg = Debug|Any CPU
+		{4732105B-2AA4-44B1-A8A4-249DF845DAE7}.Debug|x86.Build.0 = Debug|Any CPU
+		{4732105B-2AA4-44B1-A8A4-249DF845DAE7}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{4732105B-2AA4-44B1-A8A4-249DF845DAE7}.Release|Any CPU.Build.0 = Release|Any CPU
+		{4732105B-2AA4-44B1-A8A4-249DF845DAE7}.Release|arm64.ActiveCfg = Release|Any CPU
+		{4732105B-2AA4-44B1-A8A4-249DF845DAE7}.Release|arm64.Build.0 = Release|Any CPU
+		{4732105B-2AA4-44B1-A8A4-249DF845DAE7}.Release|x64.ActiveCfg = Release|Any CPU
+		{4732105B-2AA4-44B1-A8A4-249DF845DAE7}.Release|x64.Build.0 = Release|Any CPU
+		{4732105B-2AA4-44B1-A8A4-249DF845DAE7}.Release|x86.ActiveCfg = Release|Any CPU
+		{4732105B-2AA4-44B1-A8A4-249DF845DAE7}.Release|x86.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
