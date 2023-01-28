@@ -12,4 +12,10 @@ namespace PersianCalendar.Wpf;
 /// </summary>
 public partial class App : Application
 {
+    protected override void OnStartup(StartupEventArgs e)
+    {
+        Window window = new();
+        window.Show();
+        base.OnStartup(e);
+    }
 }
