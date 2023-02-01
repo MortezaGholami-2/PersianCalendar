@@ -13,16 +13,14 @@ using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
 
-namespace PersianCalendar.Wpf.Controls
+namespace PersianCalendar.Wpf.Views;
+/// <summary>
+/// Interaction logic for MainWindow.xaml
+/// </summary>
+public partial class MainWindow : Window
 {
-    /// <summary>
-    /// Interaction logic for NavigationColumn.xaml
-    /// </summary>
-    public partial class NavigationColumn : UserControl
+    public MainWindow()
     {
-        public NavigationColumn()
-        {
-            InitializeComponent();
-        }
+        InitializeComponent();
     }
 }

@@ -1,4 +1,4 @@
-﻿<Window x:Class="PersianCalendar.Wpf.MainWindow"
+﻿<Window x:Class="PersianCalendar.Wpf.Views.MainWindow"
         xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
         xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
         xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
@@ -23,7 +23,7 @@
         </Grid.RowDefinitions>
 
         <TextBlock Grid.Row="0" FontSize="20" Text="{Binding PageTitle}"/>
-        <controls:NavigationColumn Grid.Row="1"/>
+        <controls:NavigationView Grid.Row="1"/>
         <Frame Grid.Row="2" Content=""/>
         <ContentControl Grid.Row="2" Content="{Binding}"/>
     </Grid>
