@@ -12,8 +12,4 @@
     <ProjectReference Include="..\PersianCalendar.WinUI3.Core\PersianCalendar.Core.csproj" />
   </ItemGroup>
 
-  <ItemGroup>
-    <Folder Include="Views\" />
-  </ItemGroup>
-
 </Project>

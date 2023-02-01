@@ -4,9 +4,27 @@
         xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:PersianCalendar.Wpf"
+        xmlns:viewModels="clr-namespace:PersianCalendar.Wpf.ViewModels"
+        xmlns:designViewModels="clr-namespace:PersianCalendar.Wpf.ViewModels.Design"
+        xmlns:controls="clr-namespace:PersianCalendar.Wpf.Controls"
         mc:Ignorable="d"
         Title="MainWindow" Height="450" Width="800">
-    <Grid>
 
+    <Window.Resources>
+        <viewModels:MainViewModel x:Key="ViewModel"/>
+        <designViewModels:MainViewModelDesign x:Key="DesignViewModel"/>
+    </Window.Resources>
+    
+    <Grid DataContext="{StaticResource ViewModel}" d:DataContext="{StaticResource DesignViewModel}">
+        <Grid.RowDefinitions>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="*"/>
+        </Grid.RowDefinitions>
+
+        <TextBlock Grid.Row="0" FontSize="20" Text="{Binding PageTitle}"/>
+        <controls:NavigationColumn Grid.Row="1"/>
+        <Frame Grid.Row="2" Content=""/>
+        <ContentControl Grid.Row="2" Content="{Binding}"/>
     </Grid>
 </Window>
