@@ -3,24 +3,20 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using System.Windows.Controls;
 using PersianCalendar.Wpf.Controls;
 
 namespace PersianCalendar.Wpf.Services;
 public class NavigationViewService
 {
-    private NavigationView navigationView;
-
-    public NavigationViewService()
+    public RadioButton? GetSelectedItem(Type pageType)
     {
-        navigationView = new NavigationView();
-    }
-    public object? GetSelectedItem(Type pageType)
-    {
-        if (navigationView != null)
-        {
-            return GetSelectedItem(navigationView.MenuItems, pageType) ?? GetSelectedItem(navigationView.FooterMenuItems, pageType);
-        }
+        //if (navigationView != null)
+        //{
+        //    return GetSelectedItem(navigationView.MenuItems, pageType) ?? GetSelectedItem(navigationView.FooterMenuItems, pageType);
+        //}
 
-        return null;
+        //return null;
+        return default;
     }
 }
