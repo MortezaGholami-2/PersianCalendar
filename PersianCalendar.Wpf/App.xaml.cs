@@ -15,7 +15,7 @@ public partial class App : Application
 {
     protected override void OnStartup(StartupEventArgs e)
     {
-        Window window = new MainWindow();
+        Window window = new ShellWindow();
         window.Show();
         base.OnStartup(e);
     }
