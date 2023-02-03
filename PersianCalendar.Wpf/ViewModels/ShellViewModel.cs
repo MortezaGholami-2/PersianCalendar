@@ -21,9 +21,7 @@ public class ShellViewModel : BaseViewModel
         "microsoft",
         "windows",
         "surface",
-        "windowsphone",
-        "dotnet",
-        "csharp"
+        "windowsphone"
     };
 
     public ShellViewModel()

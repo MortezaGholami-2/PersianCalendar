@@ -24,8 +24,11 @@
             <RowDefinition Height="*"/>
         </Grid.RowDefinitions>
 
-        <ui:NavigationView Grid.Row="0" Content="{Binding}" MenuItemsSource="{Binding NavigationViewItems}">
-
+        <ui:NavigationView Grid.Row="0" MenuItemsSource="{Binding NavigationViewItems}">
+            <ui:NavigationView.FooterMenuItems>
+                <ui:NavigationViewItem Content="mmmm" Icon="Save"/>
+            </ui:NavigationView.FooterMenuItems>
+            <Frame></Frame>
         </ui:NavigationView>
         <TextBlock Grid.Row="2" FontSize="20" Text="{Binding PageTitle}"/>
         <controls:NavigationView Grid.Row="1"/>

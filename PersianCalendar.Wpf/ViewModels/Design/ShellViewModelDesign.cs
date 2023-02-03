@@ -24,9 +24,7 @@ public class ShellViewModelDesign
         "microsoft",
         "windows",
         "surface",
-        "windowsphone",
-        "dotnet",
-        "csharp"
+        "windowsphone"
     };
 
     public ShellViewModelDesign()
