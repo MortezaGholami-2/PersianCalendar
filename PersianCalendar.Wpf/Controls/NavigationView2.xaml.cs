@@ -18,9 +18,9 @@ namespace PersianCalendar.Wpf.Controls
     /// <summary>
     /// Interaction logic for NavigationColumn.xaml
     /// </summary>
-    public partial class NavigationView : UserControl
+    public partial class NavigationView2 : UserControl
     {
-        public NavigationView()
+        public NavigationView2()
         {
             InitializeComponent();
         }

@@ -5,14 +5,16 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Controls;
 using System.Windows.Input;
+using ModernWpf.Controls;
 using PersianCalendar.Wpf.ViewModels;
 
 namespace PersianCalendar.Wpf.Contracts;
 
 public interface INavigationViewService
 {
-    BaseViewModel CurrentViewModel { get; }
-    ICommand UpdateCurrentViewModelCommand { get; }
+    void Initialize(NavigationView navigationView);
 
-    RadioButton? GetSelectedItem(Type pageType);
+    void UnregisterEvents();
+    
+    NavigationViewItem? GetSelectedItem(Type pageType);
 }

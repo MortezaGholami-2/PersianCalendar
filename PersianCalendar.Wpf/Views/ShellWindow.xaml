@@ -7,8 +7,9 @@
         xmlns:viewModels="clr-namespace:PersianCalendar.Wpf.ViewModels"
         xmlns:designViewModels="clr-namespace:PersianCalendar.Wpf.ViewModels.Design"
         xmlns:controls="clr-namespace:PersianCalendar.Wpf.Controls"
-        xmlns:ui="http://schemas.modernwpf.com/2019"
-        ui:WindowHelper.UseModernWindowStyle="True"
+        xmlns:modernwpf="http://schemas.modernwpf.com/2019"
+        modernwpf:WindowHelper.UseModernWindowStyle="True"
+        xmlns:helpers="clr-namespace:PersianCalendar.Wpf.Helpers"
         mc:Ignorable="d"
         Title="MainWindow" Height="450" Width="800">
 
@@ -24,12 +25,18 @@
             <RowDefinition Height="*"/>
         </Grid.RowDefinitions>
 
-        <ui:NavigationView Grid.Row="0" MenuItemsSource="{Binding NavigationViewItems}">
-            <ui:NavigationView.FooterMenuItems>
-                <ui:NavigationViewItem Content="mmmm" Icon="Save"/>
-            </ui:NavigationView.FooterMenuItems>
+        <modernwpf:NavigationView Grid.Row="0">
+            <modernwpf:NavigationView.MenuItems>
+                <modernwpf:NavigationViewItem Content="Dashboard" helpers:NavigationViewHelper.NavigateTo="PersianCalendar.Wpf.ViewModels.DashboardViewModel"/>
+                <modernwpf:NavigationViewItem Content="Calendar" helpers:NavigationViewHelper.NavigateTo="PersianCalendar.Wpf.ViewModels.CalendarViewModel"/>
+                <modernwpf:NavigationViewItem Content="Tasks"/>
+                <modernwpf:NavigationViewItem Content="Shifts"/>
+            </modernwpf:NavigationView.MenuItems>
+            <modernwpf:NavigationView.FooterMenuItems>
+                <modernwpf:NavigationViewItem Content="mmmm" Icon="Save"/>
+            </modernwpf:NavigationView.FooterMenuItems>
             <Frame></Frame>
-        </ui:NavigationView>
+        </modernwpf:NavigationView>
         <TextBlock Grid.Row="2" FontSize="20" Text="{Binding PageTitle}"/>
         <controls:NavigationView Grid.Row="1"/>
     </Grid>

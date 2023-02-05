@@ -4,10 +4,14 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows;
+using PersianCalendar.Wpf.Contracts;
+using PersianCalendar.Wpf.Services;
 
 namespace PersianCalendar.Wpf.ViewModels;
 public class ShellViewModel : BaseViewModel
 {
+    public INavigationViewService NavigationViewService { get; set; } = new NavigationViewService();
+
     public string PageTitle
     {
         get; set;
