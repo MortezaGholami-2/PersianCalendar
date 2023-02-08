@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace PersianCalendar.Wpf.ViewModels
 {
-    public class ShiftsViewModel : BaseViewModel
+    public class ShiftsViewModel
     {
     }
 }

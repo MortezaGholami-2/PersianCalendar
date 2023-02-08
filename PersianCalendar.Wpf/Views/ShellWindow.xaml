@@ -38,6 +38,6 @@
             <Frame></Frame>
         </modernwpf:NavigationView>
         <TextBlock Grid.Row="2" FontSize="20" Text="{Binding PageTitle}"/>
-        <controls:NavigationView Grid.Row="1"/>
+        <controls:NavigationView2 Grid.Row="1"/>
     </Grid>
 </Window>

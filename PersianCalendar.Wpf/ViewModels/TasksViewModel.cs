@@ -4,9 +4,8 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace PersianCalendar.Wpf.ViewModels
+namespace PersianCalendar.Wpf.ViewModels;
+
+public class TasksViewModel
 {
-    public class TasksViewModel : BaseViewModel
-    {
-    }
 }

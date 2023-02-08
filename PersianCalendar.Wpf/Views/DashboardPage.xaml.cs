@@ -13,16 +13,15 @@ using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
 
-namespace PersianCalendar.Wpf.Views
+namespace PersianCalendar.Wpf.Views;
+
+/// <summary>
+/// Interaction logic for DashboardPage.xaml
+/// </summary>
+public partial class DashboardPage : Page
 {
-    /// <summary>
-    /// Interaction logic for DashboardPage.xaml
-    /// </summary>
-    public partial class DashboardPage : Page
+    public DashboardPage()
     {
-        public DashboardPage()
-        {
-            InitializeComponent();
-        }
+        InitializeComponent();
     }
 }

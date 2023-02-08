@@ -12,17 +12,17 @@ using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
+using PersianCalendar.Wpf.ViewModels;
 
-namespace PersianCalendar.Wpf.Views
+namespace PersianCalendar.Wpf.Views;
+
+/// <summary>
+/// Interaction logic for CalendarPage.xaml
+/// </summary>
+public partial class CalendarPage : Page
 {
-    /// <summary>
-    /// Interaction logic for CalendarPage.xaml
-    /// </summary>
-    public partial class CalendarPage : Page
+    public CalendarPage()
     {
-        public CalendarPage()
-        {
-            InitializeComponent();
-        }
+        InitializeComponent();
     }
 }

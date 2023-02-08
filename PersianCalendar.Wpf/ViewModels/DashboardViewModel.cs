@@ -3,19 +3,19 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using CommunityToolkit.Mvvm.ComponentModel;
 
-namespace PersianCalendar.Wpf.ViewModels
+namespace PersianCalendar.Wpf.ViewModels;
+
+public class DashboardViewModel : ObservableRecipient
 {
-    public class DashboardViewModel : BaseViewModel
+    public string PageTitle
     {
-        public string PageTitle
-        {
-            get; set;
-        }
+        get; set;
+    }
 
-        public DashboardViewModel()
-        {
-            PageTitle = "Dashboard Page";
-        }
+    public DashboardViewModel()
+    {
+        PageTitle = "Dashboard Page";
     }
 }

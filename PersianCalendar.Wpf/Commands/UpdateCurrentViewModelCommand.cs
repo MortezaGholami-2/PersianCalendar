@@ -23,20 +23,20 @@ public class UpdateCurrentViewModelCommand : ICommand
     }
     public void Execute(object? parameter)
     {
-        if (parameter is ViewType)
-        {
-            ViewType viewType = (ViewType)parameter;
-            switch (viewType)
-            {
-                case ViewType.Dashboard:
-                    _INavigationViewService.CurrentViewModel = new DashboardViewModel();
-                    break;
-                case ViewType.Calendar:
-                    _INavigationViewService.CurrentViewModel = new CalendarViewModel();
-                    break;
-                default:
-                    break;
-            }
-        }
+        //if (parameter is ViewType)
+        //{
+        //    ViewType viewType = (ViewType)parameter;
+        //    switch (viewType)
+        //    {
+        //        case ViewType.Dashboard:
+        //            _INavigationViewService.CurrentViewModel = new DashboardViewModel();
+        //            break;
+        //        case ViewType.Calendar:
+        //            _INavigationViewService.CurrentViewModel = new CalendarViewModel();
+        //            break;
+        //        default:
+        //            break;
+        //    }
+        //}
     }
 }
