@@ -14,6 +14,8 @@
     
     <Grid x:Name="ContentArea">
         <StackPanel Orientation="Vertical">
+            <TextBlock Text="{x:Bind ViewModel.SelectedPersianYear, Mode=OneWay}" Style="{StaticResource BodyTextBlockStyle}"/>
+            <TextBlock Text="{x:Bind ViewModel.SelectedPersianMonth, Mode=OneWay}" Style="{StaticResource BodyTextBlockStyle}"/>
             <TextBlock Text="{x:Bind ViewModel.CurrentDate, Converter={StaticResource GregorianToPersianConverter}, Mode=OneWay}" Style="{StaticResource BodyTextBlockStyle}"/>
             <TextBlock Text="{x:Bind ViewModel.MyProperty}" Style="{StaticResource BodyTextBlockStyle}"/>
             <TextBlock Text="{x:Bind ViewModel.MyProperty2}" Style="{StaticResource BodyTextBlockStyle}"/>

@@ -5,7 +5,9 @@ using System.Data;
 using System.Linq;
 using System.Threading.Tasks;
 using System.Windows;
+using Microsoft.Extensions.Hosting;
 using PersianCalendar.Wpf.Views;
+using Windows.ApplicationModel.Activation;
 
 namespace PersianCalendar.Wpf;
 /// <summary>

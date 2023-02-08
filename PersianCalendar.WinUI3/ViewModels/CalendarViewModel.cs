@@ -2,9 +2,15 @@
 using CommunityToolkit.Mvvm.ComponentModel;
 
 namespace PersianCalendar.WinUI3.ViewModels;
-public class CalendarViewModel : ObservableRecipient
+public partial class CalendarViewModel : ObservableRecipient
 {
     #region Properties
+
+    [ObservableProperty]
+    private string? selectedPersianYear;
+
+    [ObservableProperty]
+    private string? selectedPersianMonth;
 
     private DateTime _CurrentDate;
     private int _CurrentPersianYear;
@@ -80,6 +86,9 @@ public class CalendarViewModel : ObservableRecipient
     #endregion
     public CalendarViewModel()
     {
+        SelectedPersianYear = "dsdfsdf";
+        SelectedPersianMonth = "dfdsfsdfsdf";
+
         CurrentDate = DateTime.Now;
         CurrentPersianYear = 1402;
         CurrentPersianMonth = 2;
