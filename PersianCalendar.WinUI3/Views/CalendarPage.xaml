@@ -13,7 +13,14 @@
     </Page.Resources>
     
     <Grid x:Name="ContentArea">
-        <StackPanel Orientation="Vertical">
+        <Grid.RowDefinitions>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="*"/>
+        </Grid.RowDefinitions>
+        <Grid Grid.Row="0">
+            <TextBlock Text="hghjgjhg"/>
+        </Grid>
+        <StackPanel Grid.Row="1" Orientation="Vertical">
             <TextBlock Text="{x:Bind ViewModel.SelectedPersianYear, Mode=OneWay}" Style="{StaticResource BodyTextBlockStyle}"/>
             <TextBlock Text="{x:Bind ViewModel.SelectedPersianMonth, Mode=OneWay}" Style="{StaticResource BodyTextBlockStyle}"/>
             <TextBlock Text="{x:Bind ViewModel.CurrentDate, Converter={StaticResource GregorianToPersianConverter}, Mode=OneWay}" Style="{StaticResource BodyTextBlockStyle}"/>

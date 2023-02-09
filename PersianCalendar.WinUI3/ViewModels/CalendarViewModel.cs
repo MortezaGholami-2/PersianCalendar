@@ -7,10 +7,13 @@ public partial class CalendarViewModel : ObservableRecipient
     #region Properties
 
     [ObservableProperty]
-    private string? selectedPersianYear;
+    private ushort? selectedPersianYear;
 
     [ObservableProperty]
-    private string? selectedPersianMonth;
+    private ushort? selectedPersianMonth;
+
+    [ObservableProperty]
+    private ushort? selectedPersianDay;
 
     private DateTime _CurrentDate;
     private int _CurrentPersianYear;
@@ -86,8 +89,8 @@ public partial class CalendarViewModel : ObservableRecipient
     #endregion
     public CalendarViewModel()
     {
-        SelectedPersianYear = "dsdfsdf";
-        SelectedPersianMonth = "dfdsfsdfsdf";
+        SelectedPersianYear = 1399;
+        SelectedPersianMonth = 12;
 
         CurrentDate = DateTime.Now;
         CurrentPersianYear = 1402;
