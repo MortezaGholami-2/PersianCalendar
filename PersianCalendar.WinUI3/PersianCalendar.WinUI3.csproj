@@ -21,6 +21,7 @@
     <Page Remove="ViewModels\Design\**" />
   </ItemGroup>
   <ItemGroup>
+    <None Remove="Controls\ShamsiCalendar.xaml" />
     <None Remove="Views\CalendarPage.xaml" />
     <None Remove="Views\DashboardPage.xaml" />
     <None Remove="Views\ShiftPage.xaml" />
@@ -59,6 +60,9 @@
     <None Update="appsettings.json">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </None>
+    <Page Update="Controls\ShamsiCalendar.xaml">
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
     <Page Update="Views\ShiftPage.xaml">
       <XamlRuntime>$(DefaultXamlRuntime)</XamlRuntime>
     </Page>

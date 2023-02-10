@@ -5,7 +5,8 @@
     xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
     xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
     mc:Ignorable="d"
-    xmlns:helpers="using:PersianCalendar.WinUI3.Helpers">
+    xmlns:helpers="using:PersianCalendar.WinUI3.Helpers"
+    xmlns:controls="using:PersianCalendar.WinUI3.Controls">
 
     <Page.Resources>
         <helpers:GregorianToPersianConverter x:Key="GregorianToPersianConverter"/>
@@ -16,10 +17,29 @@
         <Grid.RowDefinitions>
             <RowDefinition Height="Auto"/>
             <RowDefinition Height="*"/>
+            <RowDefinition Height="Auto"/>
         </Grid.RowDefinitions>
-        <Grid Grid.Row="0">
+        
+        <Grid x:Name="TopSection" Grid.Row="0">
+            <!-- Page Title -->
+            <!-- Toolbar -->
+            <!-- Today Date -->
+            <!-- Search -->
+            <!-- Notifications -->
             <TextBlock Text="hghjgjhg"/>
         </Grid>
+        
+        <Grid x:Name="MiddleSection" Grid.Row="1">
+            <!--<CalendarView Language="Persian" CalendarIdentifier="PersianCalendar"/>-->
+            <controls:ShamsiCalendar Text="Morteza"/>
+            <!-- Calendars checkboxes -->
+            <!-- Calendar Control -->
+        </Grid>
+        
+        <Grid x:Name="BottomSection" Grid.Row="2">
+            <!-- Tasks -->
+        </Grid>
+        
         <StackPanel Grid.Row="1" Orientation="Vertical">
             <TextBlock Text="{x:Bind ViewModel.SelectedPersianYear, Mode=OneWay}" Style="{StaticResource BodyTextBlockStyle}"/>
             <TextBlock Text="{x:Bind ViewModel.SelectedPersianMonth, Mode=OneWay}" Style="{StaticResource BodyTextBlockStyle}"/>
