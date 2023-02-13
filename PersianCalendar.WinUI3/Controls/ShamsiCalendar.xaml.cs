@@ -26,6 +26,27 @@ namespace PersianCalendar.WinUI3.Controls
         public ShamsiCalendar()
         {
             this.InitializeComponent();
+            DataContext = this;
         }
+
+
+
+        public string Content2
+        {
+            get
+            {
+                return (string)GetValue(Content2Property);
+            }
+            set
+            {
+                SetValue(Content2Property, value);
+            }
+        }
+
+        // Using a DependencyProperty as the backing store for Content2.  This enables animation, styling, binding, etc...
+        public static readonly DependencyProperty Content2Property =
+            DependencyProperty.Register("Content2", typeof(string), typeof(ShamsiCalendar), new PropertyMetadata(string.Empty));
+
+
     }
 }

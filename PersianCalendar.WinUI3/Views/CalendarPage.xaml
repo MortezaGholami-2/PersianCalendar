@@ -26,12 +26,13 @@
             <!-- Today Date -->
             <!-- Search -->
             <!-- Notifications -->
-            <TextBlock Text="hghjgjhg"/>
+            <!--<TextBlock Text="hghjgjhg"/>-->
         </Grid>
         
-        <Grid x:Name="MiddleSection" Grid.Row="1">
+        <Grid x:Name="MiddleSection" Grid.Row="0">
             <!--<CalendarView Language="Persian" CalendarIdentifier="PersianCalendar"/>-->
-            <controls:ShamsiCalendar Text="Morteza"/>
+            <!--<controls:ShamsiCalendar Content2="Morteza"/>-->
+            <controls:CalendarDay BorderBrush="Cyan" DayNumber="1"/>
             <!-- Calendars checkboxes -->
             <!-- Calendar Control -->
         </Grid>
@@ -41,6 +42,7 @@
         </Grid>
         
         <StackPanel Grid.Row="1" Orientation="Vertical">
+            <controls:CalendarDay BorderBrush="BlueViolet" DayNumber="12354664" Background="Khaki"/>
             <TextBlock Text="{x:Bind ViewModel.SelectedPersianYear, Mode=OneWay}" Style="{StaticResource BodyTextBlockStyle}"/>
             <TextBlock Text="{x:Bind ViewModel.SelectedPersianMonth, Mode=OneWay}" Style="{StaticResource BodyTextBlockStyle}"/>
             <TextBlock Text="{x:Bind ViewModel.CurrentDate, Converter={StaticResource GregorianToPersianConverter}, Mode=OneWay}" Style="{StaticResource BodyTextBlockStyle}"/>

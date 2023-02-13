@@ -11,28 +11,29 @@
     mc:Ignorable="d">
 
     <Grid>
+        <TextBlock Text="{Binding Content2}"/>
         <ContentControl>
             <ControlTemplate>
-                <DataTemplate>
-                    <Grid>
-                        <Grid.RowDefinitions>
-                            <RowDefinition Height="Auto"/>
-                            <RowDefinition Height="*"/>
-                        </Grid.RowDefinitions>
 
-                        <Grid Grid.Row="0">
-                            <Grid.ColumnDefinitions>
-                                <ColumnDefinition Width="Auto"/>
-                                <ColumnDefinition Width="*"/>
-                                <ColumnDefinition Width="Auto"/>
-                            </Grid.ColumnDefinitions>
+                <Grid>
+                    <Grid.RowDefinitions>
+                        <RowDefinition Height="Auto"/>
+                        <RowDefinition Height="*"/>
+                    </Grid.RowDefinitions>
 
-                            <TextBlock Grid.Column="0" Text="{TemplateBinding Text}"/>
-                        </Grid>
+                    <Grid Grid.Row="0">
+                        <Grid.ColumnDefinitions>
+                            <ColumnDefinition Width="Auto"/>
+                            <ColumnDefinition Width="*"/>
+                            <ColumnDefinition Width="Auto"/>
+                        </Grid.ColumnDefinitions>
 
+                        <!--<TextBlock Grid.Column="0" Text="{TemplateBinding Content2}"/>-->
                     </Grid>
 
-                </DataTemplate>
+                </Grid>
+
+
             </ControlTemplate>
         </ContentControl>
     </Grid>
