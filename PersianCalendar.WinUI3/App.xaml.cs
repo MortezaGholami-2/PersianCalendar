@@ -3,7 +3,7 @@ using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
 using Microsoft.UI.Xaml;
-
+using Microsoft.Windows.Widgets;
 using PersianCalendar.WinUI3.Activation;
 using PersianCalendar.WinUI3.Contracts.Services;
 using PersianCalendar.Core.Contracts.Services;
@@ -14,6 +14,7 @@ using PersianCalendar.WinUI3.Notifications;
 using PersianCalendar.WinUI3.Services;
 using PersianCalendar.WinUI3.ViewModels;
 using PersianCalendar.WinUI3.Views;
+using System.Runtime.InteropServices;
 
 namespace PersianCalendar.WinUI3;
 
@@ -93,8 +94,8 @@ public partial class App : Application
             services.AddTransient<ContentGridPage>();
             services.AddTransient<DataGridViewModel>();
             services.AddTransient<DataGridPage>();
-            //services.AddTransient<WebViewViewModel>();
-            //services.AddTransient<WebViewPage>();
+            services.AddTransient<WebViewViewModel>();
+            services.AddTransient<WebViewPage>();
             services.AddTransient<ShellPage>();
             services.AddTransient<ShellViewModel>();
 
@@ -119,6 +120,46 @@ public partial class App : Application
         base.OnLaunched(args);
 
         App.GetService<IAppNotificationService>().Show(string.Format("AppNotificationSamplePayload".GetLocalized(), AppContext.BaseDirectory));
+
+        // ------- Widget --------------
+        [DllImport("kernel32.dll")]
+        static extern IntPtr GetConsoleWindow();
+
+        [DllImport("ole32.dll")]
+
+        static extern int CoRegisterClassObject(
+            [MarshalAs(UnmanagedType.LPStruct)] Guid rclsid,
+            [MarshalAs(UnmanagedType.IUnknown)] object pUnk,
+            uint dwClsContext,
+            uint flags,
+            out uint lpdwRegister);
+
+        [DllImport("ole32.dll")] static extern int CoRevokeClassObject(uint dwRegister);
+
+        Console.WriteLine("Registering Widget Provider");
+        uint cookie;
+
+        Guid CLSID_Factory = Guid.Parse("7E6CA560-ED23-44E5-BCE3-176570726CD1");
+        CoRegisterClassObject(CLSID_Factory, new WidgetHelper<WidgetService>(), 0x4, 0x1, out cookie);
+        Console.WriteLine("Registered successfully. Press ENTER to exit.");
+        Console.ReadLine();
+
+        if (GetConsoleWindow() != IntPtr.Zero)
+        {
+            Console.WriteLine("Registered successfully. Press ENTER to exit.");
+            Console.ReadLine();
+        }
+        else
+        {
+            // Wait until the manager has disposed of the last widget provider.
+            using (var emptyWidgetListEvent = WidgetService.GetEmptyWidgetListEvent())
+            {
+                //emptyWidgetListEvent.WaitOne();
+            }
+
+            CoRevokeClassObject(cookie);
+        }
+        // -----------------------------
 
         await App.GetService<IActivationService>().ActivateAsync(args);
     }

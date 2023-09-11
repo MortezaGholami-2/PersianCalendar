@@ -1,0 +1,132 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+
+<Package
+  xmlns="http://schemas.microsoft.com/appx/manifest/foundation/windows10"
+  xmlns:uap="http://schemas.microsoft.com/appx/manifest/uap/windows10"
+  xmlns:rescap="http://schemas.microsoft.com/appx/manifest/foundation/windows10/restrictedcapabilities"
+  xmlns:uap3="http://schemas.microsoft.com/appx/manifest/uap/windows10/3"
+  xmlns:com="http://schemas.microsoft.com/appx/manifest/com/windows10"
+  IgnorableNamespaces="uap rescap">
+
+  <Identity
+    Name="784a8d00-70f7-44ff-965b-e95feb3f6518"
+    Publisher="CN=Morteza Gholami"
+    Version="1.0.0.0" />
+
+  <Properties>
+    <DisplayName>PersianCalendar.Package</DisplayName>
+    <PublisherDisplayName>Morteza Gholami</PublisherDisplayName>
+    <Logo>Images\StoreLogo.png</Logo>
+  </Properties>
+
+  <Dependencies>
+    <TargetDeviceFamily Name="Windows.Universal" MinVersion="10.0.0.0" MaxVersionTested="10.0.0.0" />
+    <TargetDeviceFamily Name="Windows.Desktop" MinVersion="10.0.14393.0" MaxVersionTested="10.0.14393.0" />
+    <PackageDependency Name="Microsoft.WindowsAppRuntime.1.2-preview2" MinVersion="2000.638.7.0" Publisher="CN=Microsoft Corporation, O=Microsoft Corporation, L=Redmond, S=Washington, C=US" />
+  </Dependencies>
+
+  <Resources>
+    <Resource Language="x-generate"/>
+  </Resources>
+
+  <Applications>
+    <Application Id="App"
+      Executable="$targetnametoken$.exe"
+      EntryPoint="$targetentrypoint$">
+      <uap:VisualElements
+        DisplayName="PersianCalendar.Package"
+        Description="PersianCalendar.Package"
+        BackgroundColor="transparent"
+        Square150x150Logo="Images\Square150x150Logo.png"
+        Square44x44Logo="Images\Square44x44Logo.png">
+        <uap:DefaultTile Wide310x150Logo="Images\Wide310x150Logo.png" />
+        <uap:SplashScreen Image="Images\SplashScreen.png" />
+      </uap:VisualElements>
+		<Extensions>
+			<com:Extension Category="windows.comServer">
+				<com:ComServer>
+					<com:ExeServer Executable="ExampleWidgetProvider\ExampleWidgetProvider.exe" DisplayName="ExampleWidgetProvider">
+						<com:Class Id="7E6CA560-ED23-44E5-BCE3-176570726CD1" DisplayName="ExampleWidgetProvider" />
+					</com:ExeServer>
+				</com:ComServer>
+			</com:Extension>
+			<uap3:Extension Category="windows.appExtension">
+				<uap3:AppExtension Name="com.microsoft.windows.widgets" DisplayName="WidgetTestApp" Id="ContosoWidgetApp" PublicFolder="Public">
+					<uap3:Properties>
+						<WidgetProvider>
+							<ProviderIcons>
+								<Icon Path="Images\StoreLogo.png" />
+							</ProviderIcons>
+							<Activation>
+								<!-- Apps exports COM interface which implements IWidgetProvider -->
+								<CreateInstance ClassId="xxxxxxxx-xxxx-xxxx-xxxx-xxxxxxxxxxxx" />
+							</Activation>
+
+							<TrustedPackageFamilyNames>
+								<TrustedPackageFamilyName>Microsoft.MicrosoftEdge.Stable_8wekyb3d8bbwe</TrustedPackageFamilyName>
+							</TrustedPackageFamilyNames>
+
+							<Definitions>
+								<Definition Id="Weather_Widget"
+									DisplayName="Weather Widget"
+									Description="Weather Widget Description"
+									AllowMultiple="true">
+									<Capabilities>
+										<Capability>
+											<Size Name="small" />
+										</Capability>
+										<Capability>
+											<Size Name="medium" />
+										</Capability>
+										<Capability>
+											<Size Name="large" />
+										</Capability>
+									</Capabilities>
+									<ThemeResources>
+										<Icons>
+											<Icon Path="ProviderAssets\Weather_Icon.png" />
+										</Icons>
+										<Screenshots>
+											<Screenshot Path="ProviderAssets\Weather_Screenshot.png" DisplayAltText="For accessibility" />
+										</Screenshots>
+										<!-- DarkMode and LightMode are optional -->
+										<DarkMode />
+										<LightMode />
+									</ThemeResources>
+								</Definition>
+								<Definition Id="Counting_Widget"
+										DisplayName="Microsoft Counting Widget"
+										Description="Couting Widget Description">
+									<Capabilities>
+										<Capability>
+											<Size Name="small" />
+										</Capability>
+									</Capabilities>
+									<ThemeResources>
+										<Icons>
+											<Icon Path="ProviderAssets\Counting_Icon.png" />
+										</Icons>
+										<Screenshots>
+											<Screenshot Path="ProviderAssets\Counting_Screenshot.png" DisplayAltText="For accessibility" />
+										</Screenshots>
+										<!-- DarkMode and LightMode are optional -->
+										<DarkMode>
+
+										</DarkMode>
+										<LightMode />
+									</ThemeResources>
+								</Definition>
+							</Definitions>
+						</WidgetProvider>
+					</uap3:Properties>
+				</uap3:AppExtension>
+			</uap3:Extension>
+		</Extensions>
+    </Application>
+  </Applications>
+
+  <Capabilities>
+    <Capability Name="internetClient" />
+    <rescap:Capability Name="runFullTrust" />
+  </Capabilities>
+</Package>
